@@ -1059,7 +1059,7 @@ const Room = () => {
     handleMute(isMuted, user.id);
   }, [isMuted]);
   useEffect(() => {
-    videoStateRef.current.muteInfo = isMuted;
+    videoStateRef.current.videoInfo = isVideo;
     handleVideo(isVideo, user.id);
   }, [isVideo]);
   const provideRef = (ref, userId, callback) => {
@@ -1147,7 +1147,7 @@ const Room = () => {
               payload: {
                 id: userAbout.id,
                 muted: mute_info,
-                video: !video_info,
+                video: video_info,
               },
             })
         );
@@ -1230,7 +1230,7 @@ const Room = () => {
       peerId,
       mute_info: muteStateRef.current.muteInfo,
       userAbout: user,
-      video_info: videoStateRef.current.muteInfo,
+      video_info: videoStateRef.current.videoInfo,
     });
   };
 
@@ -1402,35 +1402,23 @@ const Room = () => {
                     />
                     <div className={styles.containerb}>
                       <div className={styles.upper_box}>
-                        {/* <video
+                      <video
                         autoPlay
                         muted
                         style={{
-                          width: "300px",
-                          height: "180px",
-                          borderRadius: "12px",
+                          width:client.video?"300px":"0px",
+                          height:client.video?"180px":"0px",
+                          borderRadius:client.video?"12px":"0px",
                         }}
                         ref={(instance) => {
                           if (instance) {
                             videoElements.current[client.id] = instance;
                           }
                         }}
-                      /> */}
+                      />
                         {client.video ? (
-                          <video
-                            autoPlay
-                            muted
-                            style={{
-                              width: "300px",
-                              height: "180px",
-                              borderRadius: "12px",
-                            }}
-                            ref={(instance) => {
-                              if (instance) {
-                                videoElements.current[client.id] = instance;
-                              }
-                            }}
-                          />
+                         ''
+                          
                         ) : (
                           <div
                             style={{
@@ -1455,6 +1443,7 @@ const Room = () => {
                             />
                           </div>
                         )}
+                       
                       </div>
                       <div className={styles.lower_box}>
                         <div className={styles.micDiv}>
