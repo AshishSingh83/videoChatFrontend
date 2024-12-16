@@ -73,3 +73,52 @@
     gap: 20px;
     margin-top: 60px;
 }
+@media (max-width: 1200px) {
+    .roomList {
+        grid-template-columns: repeat(3, 1fr); /* Adjust grid for medium screens */
+    }
+}
+
+@media (max-width: 992px) {
+    .searchBox {
+        margin-left: 10px;
+        min-width: 250px;
+    }
+
+    .roomList {
+        grid-template-columns: repeat(2, 1fr); /* Adjust grid for tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .roomsHeader {
+        flex-direction: column; /* Stack items vertically */
+        gap: 15px;
+    }
+
+    .roomList {
+        grid-template-columns: repeat(1, 1fr); /* Single column for smaller screens */
+    }
+
+    .searchBox {
+        min-width: 100%; /* Full-width search box */
+    }
+
+    .startRoomButton {
+        align-self: center; /* Center-align button */
+    }
+}
+
+@media (max-width: 576px) {
+    .heading {
+        font-size: 18px; /* Smaller font size for small screens */
+    }
+
+    .searchBox {
+        padding: 0 8px; /* Adjust padding */
+    }
+
+    .startRoomButton span {
+        font-size: 14px; /* Reduce font size */
+    }
+}
