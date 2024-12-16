@@ -277,3 +277,51 @@
     .mainContainerbbb{
         height: 90vh;
     }
+
+    
+    @media (max-width: 1200px) {
+        .client {
+          flex: 1 1 calc(50% - 20px); /* 2 clients per row */
+        }
+      }
+      
+      @media (max-width: 768px) {
+        .myDiv {
+          flex-direction: column; /* Stack chat and clients vertically */
+        }
+      
+        .clientsWrap {
+          flex: 1;
+          height: auto;
+          padding: 1rem;
+          width: 100%;
+        }
+      
+        .chatDivv {
+          flex: 1;
+          height: auto;
+          width: 100%;
+        }
+      
+        .client {
+          flex: 1 1 calc(100% - 20px); /* 1 client per row */
+        }
+      }
+      
+      @media (max-width: 480px) {
+        .navbar {
+          flex-direction: column;
+          height: auto;
+          padding: 0.5rem;
+        }
+      
+        .goBack span {
+          font-size: 0.8rem;
+        }
+      
+        .videoBtnn,
+        .micBtnn {
+          max-width: 60px;
+        }
+      }
+    
